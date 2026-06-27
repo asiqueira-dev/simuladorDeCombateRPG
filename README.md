@@ -241,12 +241,19 @@ Este projeto foi desenvolvido durante meus estudos de **Programação Orientada 
 
 ## 👨‍🏫 Professor
 
-**Bruno Garcia (Bruno Rana)**
+### Bruno Garcia (Bruno Rana)
 
-Staff Software Engineer e fundador da Build & Run, compartilhando conhecimentos em Java, Spring Boot, Arquitetura de Software, Microsserviços, AWS, Docker, Kubernetes e boas práticas de desenvolvimento.
+**Staff Software Engineer**, fundador da **Build & Run** e especialista em desenvolvimento de software com foco em **Java**, **Spring Boot**, **Arquitetura de Software**, **Microsserviços**, **AWS**, **Docker**, **Kubernetes**, **DevOps** e boas práticas de programação.
 
-💼 LinkedIn:
+Ao longo da formação, compartilha conhecimentos por meio de aulas práticas e projetos reais, preparando desenvolvedores para os desafios do mercado de tecnologia.
+
+### 🔗 Contatos
+
+💼 **LinkedIn**  
 https://www.linkedin.com/in/dev-brunogarcia/
+
+📺 **Canal no YouTube**  
+https://www.youtube.com/@buildrun-tech
 
 ---
 
