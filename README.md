@@ -1,22 +1,22 @@
 # 🐉 RPG em Java - Herança e Polimorfismo
 
-> Projeto desenvolvido durante os estudos de **Programação Orientada a Objetos (POO)**, com foco em **Herança**, **Polimorfismo**, **Classes Abstratas** e **Encapsulamento**, utilizando Java.
+> Projeto desenvolvido durante os estudos de **Programação Orientada a Objetos (POO)**, com foco em **Herança**, **Polimorfismo**, **Abstração** e **Encapsulamento**, utilizando **Java**.
 
 ---
 
-## 📖 Sobre o Projeto
+# 📖 Sobre o Projeto
 
-Este projeto consiste em um jogo de RPG em modo texto, onde o jogador escolhe um herói para enfrentar um poderoso dragão.
+Este projeto consiste em um jogo de RPG desenvolvido em Java, onde o jogador escolhe um herói para enfrentar um poderoso dragão em uma batalha por turnos.
 
-Durante a batalha, o jogador pode realizar ataques normais, utilizar habilidades especiais ou recuperar vida através de poções. O combate acontece em turnos até que um dos personagens seja derrotado.
+Cada herói possui atributos e habilidades próprias, exigindo estratégias diferentes durante o combate. O objetivo é derrotar o dragão utilizando ataques, habilidades especiais e poções de vida, enquanto o inimigo pode se defender, regenerar vida e utilizar ataques especiais.
 
-O objetivo principal do projeto é aplicar conceitos fundamentais da Programação Orientada a Objetos de forma prática.
+O projeto foi desenvolvido para colocar em prática os principais conceitos da **Programação Orientada a Objetos**, especialmente **Herança** e **Polimorfismo**, além de reforçar boas práticas de organização e reutilização de código.
 
 ---
 
 # 🎯 Objetivo
 
-Eliminar o dragão e escapar da caverna.
+Eliminar o dragão e fugir da caverna.
 
 ---
 
@@ -26,35 +26,36 @@ Eliminar o dragão e escapar da caverna.
 - Sistema de combate por turnos.
 - Ataque normal.
 - Ataque especial.
-- Defesa com chance de sucesso.
-- Sistema de regeneração do monstro.
+- Sistema de defesa.
+- Regeneração de vida do monstro.
 - Utilização de poções de vida.
-- Encerramento automático da partida quando um personagem morre.
-- Exibição da vida dos personagens após cada rodada.
+- Encerramento automático da partida.
+- Exibição da vida dos personagens ao final de cada turno.
+- Organização do código utilizando Programação Orientada a Objetos.
 
 ---
 
 # 🛡️ Heróis Disponíveis
 
-| Herói | Vida | Ataque | Defesa | Especial | Poções |
-|--------|------|---------|---------|-----------|---------|
+| Herói | Vida | Ataque | Defesa | Ataques Especiais | Poções |
+|--------|------|---------|---------|-------------------|---------|
 | ⚔️ Guerreiro | 100 | 20 | 5 | 1 | 1 |
 | 🔥 Mago | 80 | 25 | 10 | 1 | 2 |
 | 🏹 Arqueiro | 90 | 18 | 8 | 3 | 1 |
 
 ---
 
-# 🐲 Inimigo
+# 🐲 Monstro
 
 ## Dragão
 
 | Atributo | Valor |
 |----------|-------|
-| Vida | 100 |
-| Ataque | 15 |
-| Defesa | 5 |
+| ❤️ Vida | 100 |
+| ⚔️ Ataque | 15 |
+| 🛡️ Defesa | 5 |
 
-Além do ataque comum, o dragão possui regeneração de vida e pode transformar um ataque normal em ataque especial.
+Além do ataque comum, o dragão possui regeneração automática de vida e pode transformar ataques normais em ataques especiais.
 
 ---
 
@@ -63,72 +64,68 @@ Além do ataque comum, o dragão possui regeneração de vida e pode transformar
 - O combate acontece em turnos.
 - O herói sempre inicia a batalha.
 - Após cada jogada é exibida a vida do herói e do dragão.
-- Caso a vida de qualquer personagem chegue a zero, o jogo termina imediatamente.
-- Toda a lógica da partida é centralizada na classe `Jogo`.
+- Caso qualquer personagem tenha sua vida zerada, o jogo é encerrado imediatamente.
+- Toda a lógica do combate está centralizada na classe `Jogo`.
 
 ---
 
 # 🎲 Regras de Combate
 
-### Ataque Especial
+### 💥 Ataque Especial
 
 Sempre que um personagem utilizar uma habilidade especial:
 
-- 50% de chance de executar o ataque.
-- 50% de chance da habilidade falhar.
+- Existe **50% de chance** do ataque especial acontecer.
+- Existe **50% de chance** da habilidade falhar.
 
 ---
 
-### Defesa
+### 🛡️ Defesa
 
 Sempre que um personagem receber dano:
 
-- 50% de chance de defender completamente o ataque.
+- Existe **50% de chance** de defender completamente o ataque.
 
 ---
 
-### Ataque Especial do Monstro
+### 🔥 Ataque Especial do Dragão
 
-Quando o dragão realiza um ataque comum:
+Quando o dragão realizar um ataque normal:
 
-- Existe 50% de chance desse ataque evoluir para um ataque especial.
+- Existe **50% de chance** desse ataque evoluir para um ataque especial.
 
 ---
 
-### Regeneração
+### ❤️ Regeneração
 
 Ao final de cada turno:
 
-- O dragão recupera parte da própria vida.
+- O dragão recupera parte da própria vida automaticamente.
 
 ---
 
-### Poções
+### 🧪 Poções de Vida
 
-Quando o herói utiliza uma poção:
+Quando o herói utilizar uma poção:
 
-- Recupera vida.
-- A quantidade disponível é reduzida do inventário.
+- Recupera pontos de vida.
+- Uma poção é removida do inventário.
 
 ---
 
-# 🏗️ Conceitos de POO Aplicados
+# 🏗️ Conceitos de Programação Orientada a Objetos
 
-✔ Herança
+Durante o desenvolvimento foram aplicados diversos conceitos fundamentais da POO:
 
-✔ Polimorfismo
-
-✔ Classes Abstratas
-
-✔ Encapsulamento
-
-✔ Sobrescrita de Métodos
-
-✔ Abstração
-
-✔ Associação entre Objetos
-
-✔ Reutilização de Código
+- ✅ Abstração
+- ✅ Encapsulamento
+- ✅ Herança
+- ✅ Polimorfismo
+- ✅ Classes Abstratas
+- ✅ Sobrescrita de Métodos (Override)
+- ✅ Associação entre Objetos
+- ✅ Reutilização de Código
+- ✅ Separação de Responsabilidades
 
 ---
 
@@ -152,20 +149,26 @@ src
 
 # 📊 Diagrama de Classes
 
-O projeto foi desenvolvido utilizando a seguinte estrutura de herança:
+O projeto foi estruturado utilizando uma hierarquia de classes baseada em herança.
 
-- **Personagem (Classe Abstrata)**
-    - Heroi
-    - Monstro
+```
+               Personagem (Classe Abstrata)
+                      ▲
+          ┌───────────┴───────────┐
+          │                       │
+       Heroi                  Monstro
+```
 
-A classe `Personagem` concentra todos os atributos e comportamentos comuns, enquanto `Heroi` e `Monstro` implementam seus comportamentos específicos através de sobrescrita de métodos.
+A classe **Personagem** concentra os atributos e comportamentos comuns.
+
+As classes **Heroi** e **Monstro** herdam esses comportamentos e implementam suas regras específicas através do polimorfismo.
 
 ---
 
 # 💻 Exemplo de Execução
 
 ```text
-Heróis disponíveis:
+Heróis disponíveis
 
 1 - Guerreiro
 2 - Mago
@@ -201,32 +204,76 @@ Vida do Dragão: 80
 
 # 🛠️ Tecnologias Utilizadas
 
-- Java
-- Programação Orientada a Objetos
-- IntelliJ IDEA (ou Eclipse)
-- Git
-- GitHub
+- ☕ Java
+- 💻 IntelliJ IDEA
+- 🌱 Git
+- 🐙 GitHub
+- 🧠 Programação Orientada a Objetos (POO)
 
 ---
 
 # 📚 Aprendizados
 
-Durante este projeto foram praticados conceitos importantes como:
+Durante o desenvolvimento deste projeto foram reforçados conhecimentos importantes como:
 
-- Organização do código em classes.
-- Criação de hierarquias utilizando herança.
-- Utilização de polimorfismo.
+- Modelagem de classes.
+- Herança.
+- Polimorfismo.
+- Encapsulamento.
+- Abstração.
+- Classes abstratas.
 - Sobrescrita de métodos.
-- Encapsulamento de atributos.
-- Reutilização de código.
+- Organização do código.
 - Separação de responsabilidades.
-- Modelagem de objetos.
+- Reutilização de código.
 
 ---
 
-# 🎓 Projeto Acadêmico
+# 🎓 Formação
 
-Projeto desenvolvido como exercício prático durante os estudos de **Programação Orientada a Objetos (POO)** na **Build & Run**, com foco em Herança e Polimorfismo.
+Este projeto foi desenvolvido durante meus estudos de **Programação Orientada a Objetos (POO)** na **Build & Run**, escola especializada na formação de desenvolvedores Java e Backend por meio de projetos práticos e desafios voltados às necessidades do mercado.
+
+## 📚 Build & Run
+
+🌐 Site: https://buildrun.com.br
+
+💼 LinkedIn: https://www.linkedin.com/company/build-run
+
+## 👨‍🏫 Professor
+
+**Bruno Garcia (Bruno Rana)**
+
+Staff Software Engineer e fundador da Build & Run, compartilhando conhecimentos em Java, Spring Boot, Arquitetura de Software, Microsserviços, AWS, Docker, Kubernetes e boas práticas de desenvolvimento.
+
+💼 LinkedIn:
+https://www.linkedin.com/in/dev-brunogarcia/
+
+---
+
+# 🚀 Como Executar
+
+Clone o repositório
+
+```bash
+git clone https://github.com/asiqueira-dev/simuladorDeCombateRPG
+
+Entre na pasta
+
+```bash
+cd simuladorDeCombateRPG
+```
+
+Compile o projeto
+
+```bash
+javac Main.java
+```
+
+Execute
+
+```bash
+java Main
+```
 
 ---
 
@@ -240,9 +287,10 @@ Desenvolvedor apaixonado por tecnologia, desenvolvimento de software e aprendiza
 
 [![Website](https://img.shields.io/badge/Website-000?style=for-the-badge&logo=google-chrome&logoColor=white)](https://andersonsiqueira.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andersonlsiqueira/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SEU-USUARIO)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/asiqueira-dev)
 
 ---
 
-⭐ Caso tenha gostado do projeto, deixe uma estrela no repositório!
+# ⭐ Se este projeto foi útil ou interessante para você, considere deixar uma estrela no repositório!
 
+Ela ajuda a valorizar o projeto e incentiva a continuidade dos estudos e do compartilhamento de conhecimento.
