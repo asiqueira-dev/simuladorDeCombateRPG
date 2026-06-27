@@ -234,10 +234,13 @@ Projeto desenvolvido como exercício prático durante os estudos de **Programaç
 
 **Anderson Lopes de Siqueira**
 
-- Java Developer
-- PHP Developer
-- Oracle SQL / PL-SQL
-- Laravel
+Desenvolvedor apaixonado por tecnologia, desenvolvimento de software e aprendizado contínuo. Atualmente estudando Java e Programação Orientada a Objetos, desenvolvendo projetos práticos para consolidar conhecimentos e construir um portfólio sólido.
+
+### 🌐 Contatos
+
+[![Website](https://img.shields.io/badge/Website-000?style=for-the-badge&logo=google-chrome&logoColor=white)](https://andersonsiqueira.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andersonlsiqueira/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SEU-USUARIO)
 
 ---
 
