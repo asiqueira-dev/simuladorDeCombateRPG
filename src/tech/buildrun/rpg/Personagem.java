@@ -15,12 +15,20 @@ public abstract class Personagem {
     }
 
     public void atacar(Personagem alvo){
+        System.out.println(this.nome + ": Ataque realizado!");
         alvo.receberDano(ataque);
     }
 
     public void receberDano(int dano){
-        // todo - realizar logica de defesa com 50% de chance
-        vida -= dano;
+        boolean podeDefender = this.executarJogadaEspecial();
+
+        int danoReal = dano;
+
+        if(podeDefender){
+            danoReal = dano - this.defensa;
+            System.out.println(this.nome + " Defesa realizada!");
+        }
+        this.vida -= danoReal;
     }
 
     public boolean estaMorto(){
@@ -38,5 +46,14 @@ public abstract class Personagem {
     public abstract void mostrarApresentacao();
 
     public abstract void usarAtaqueEspecial(Personagem alvo);
+
+    protected boolean executarJogadaEspecial(){
+       long umOuDois =  Math.round(1 + Math.random());
+
+       if(umOuDois == 1){
+           return false;
+       }
+       return true;
+    }
 
 }

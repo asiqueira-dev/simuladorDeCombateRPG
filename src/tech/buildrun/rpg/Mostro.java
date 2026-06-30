@@ -14,7 +14,17 @@ public class Mostro extends Personagem{
     }
 
     public void regenerarVida(){
-      this.vida += qtdRegeneracaoVida;
+        this.vida += qtdRegeneracaoVida;
+    }
+
+    @Override
+    public void atacar(Personagem alvo) {
+        boolean viraAtaqueEspecial = this.executarJogadaEspecial();
+        if(viraAtaqueEspecial){
+            this.usarAtaqueEspecial(alvo);
+        } else {
+            super.atacar(alvo);
+        }
     }
 
     public void usarAtaqueEspecial(){
@@ -23,11 +33,26 @@ public class Mostro extends Personagem{
 
     @Override
     public void mostrarApresentacao() {
-
+        System.out.println(this.nome + " " +
+                "(Vida: " +  this.vida + "," +
+                " Ataque: " + this.ataque + "," +
+                " Defensa: " + this.defensa + "," +
+                " Regeneração de Vida: " + this.qtdRegeneracaoVida + "," +
+                " Nome Poder Especial: " +  this.nomePoderEspecial + ")"
+        );
     }
 
     @Override
     public void usarAtaqueEspecial(Personagem alvo) {
+        boolean executarJogadaEspecial = this.executarJogadaEspecial();
+
+        if(executarJogadaEspecial){
+            int danoEspecial = this.ataque + ((int) (this.ataque * this.multiplicadorDanoEspecial));
+            alvo.receberDano(danoEspecial);
+            System.out.println(this.nome + ": Ataque Especial [" + this.nomePoderEspecial + "] realizado!");
+        } else{
+            System.out.println(this.nome + ": AAAAHHHHH!! Você deu sorte!!");
+        }
 
     }
 }

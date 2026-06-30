@@ -17,15 +17,32 @@ public class Heroi extends  Personagem {
 
     public void usarPocaoVida(){
         this.vida += 50;
+        this.qtdPocaoVida--;
     }
 
     @Override
     public void mostrarApresentacao() {
+        System.out.println(this.nome + " " +
+                "(Vida: " +  this.vida + "," +
+                " Ataque: " + this.ataque + "," +
+                " Defensa: " + this.defensa + "," +
+                " Especial: " + this.qtdAtaqueEspecial + "," +
+                " Poção: " +  this.qtdPocaoVida + ")"
+        );
 
     }
 
     @Override
     public void usarAtaqueEspecial(Personagem alvo) {
+        boolean executarJogadaEspecial = this.executarJogadaEspecial();
 
+        if(executarJogadaEspecial && qtdAtaqueEspecial > 0){
+            int danoEspecial = (int) (this.ataque * 0.1);
+            alvo.receberDano(danoEspecial);
+            this.qtdAtaqueEspecial--;
+            System.out.println(this.nome + ": Ataque Especial [" + this.nomeAtaque + "] realizado!");
+        } else{
+            System.out.println("Arrgg!! Ataque especial não realizado");
+        }
     }
 }
