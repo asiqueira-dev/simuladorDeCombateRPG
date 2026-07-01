@@ -1,6 +1,6 @@
 package tech.buildrun.rpg;
 
-public class Heroi extends  Personagem {
+public class Heroi extends Personagem {
 
     private String classe;
     private int qtdAtaqueEspecial;
@@ -16,33 +16,41 @@ public class Heroi extends  Personagem {
     }
 
     public void usarPocaoVida(){
-        this.vida += 50;
-        this.qtdPocaoVida--;
+        if (this.qtdPocaoVida > 0) {
+            this.vida += 50;
+            this.qtdPocaoVida--;
+            System.out.println(this.nome + " usou uma poção de vida e recuperou 50 de vida!");
+        } else {
+            System.out.println(this.nome + " tentou usar uma poção, mas não possui nenhuma restante!");
+        }
     }
 
     @Override
     public void mostrarApresentacao() {
-        System.out.println(this.nome + " " +
+        System.out.println(this.nome + " [" + this.classe + "] " +
                 "(Vida: " +  this.vida + "," +
                 " Ataque: " + this.ataque + "," +
                 " Defensa: " + this.defensa + "," +
                 " Especial: " + this.qtdAtaqueEspecial + "," +
                 " Poção: " +  this.qtdPocaoVida + ")"
         );
-
     }
 
     @Override
     public void usarAtaqueEspecial(Personagem alvo) {
-        boolean executarJogadaEspecial = this.executarJogadaEspecial();
+        if (this.qtdAtaqueEspecial > 0) {
+            boolean executarJogadaEspecial = this.executarJogadaEspecial();
 
-        if(executarJogadaEspecial && qtdAtaqueEspecial > 0){
-            int danoEspecial = (int) (this.ataque * 0.1);
-            alvo.receberDano(danoEspecial);
+            if (executarJogadaEspecial) {
+                int danoEspecial = this.ataque + ((int) (this.ataque * 0.1));
+                System.out.println(this.nome + ": Ataque Especial [" + this.nomeAtaque + "] realizado com sucesso!");
+                alvo.receberDano(danoEspecial);
+            } else {
+                System.out.println(this.nome + ": Arrgg!! O ataque especial falhou na execução!");
+            }
             this.qtdAtaqueEspecial--;
-            System.out.println(this.nome + ": Ataque Especial [" + this.nomeAtaque + "] realizado!");
-        } else{
-            System.out.println("Arrgg!! Ataque especial não realizado");
+        } else {
+            System.out.println(this.nome + " não possui mais cargas de Ataque Especial!");
         }
     }
 }

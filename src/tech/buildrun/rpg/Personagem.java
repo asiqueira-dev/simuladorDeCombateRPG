@@ -16,23 +16,25 @@ public abstract class Personagem {
 
     public void atacar(Personagem alvo){
         System.out.println(this.nome + ": Ataque realizado!");
-        alvo.receberDano(ataque);
+        alvo.receberDano(this.ataque);
     }
 
     public void receberDano(int dano){
         boolean podeDefender = this.executarJogadaEspecial();
-
         int danoReal = dano;
 
-        if(podeDefender){
-            danoReal = dano - this.defensa;
-            System.out.println(this.nome + " Defesa realizada!");
+        if (podeDefender) {
+            danoReal = Math.max(0, dano - this.defensa);
+            System.out.println(this.nome + " realizou uma defesa! Reduziu o dano para " + danoReal);
+        } else {
+            System.out.println(this.nome + " recebeu o dano total de " + danoReal);
         }
+
         this.vida -= danoReal;
     }
 
     public boolean estaMorto(){
-        return vida < 0;
+        return this.vida <= 0;
     }
 
     public String getNome(){
@@ -40,7 +42,8 @@ public abstract class Personagem {
     }
 
     public void mostrarVida(){
-        System.out.println(this.nome + "(Vida: " + this.vida + ")");
+        int vidaExibicao = Math.max(0, this.vida);
+        System.out.println(this.nome + " (Vida: " + vidaExibicao + ")");
     }
 
     public abstract void mostrarApresentacao();
@@ -48,12 +51,6 @@ public abstract class Personagem {
     public abstract void usarAtaqueEspecial(Personagem alvo);
 
     protected boolean executarJogadaEspecial(){
-       long umOuDois =  Math.round(1 + Math.random());
-
-       if(umOuDois == 1){
-           return false;
-       }
-       return true;
+        return Math.random() >= 0.5;
     }
-
 }
